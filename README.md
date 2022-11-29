@@ -11,7 +11,7 @@ You can install them manually or faster with package managers, e.g.:
 ```brew install node composer --cask visual-studio-code```
 
 #### Ubuntu 
-```apt install nodejs npm composer vscode git```
+```apt install nodejs npm composer code git```
 
 ### First run
 - [Download repository](https://github.com/musosoft/vscode-lint-beautify-wordpress-code/archive/main.zip) and extract into your project

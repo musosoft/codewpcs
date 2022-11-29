@@ -17,6 +17,6 @@ Thumbs.db
 phpcs.xml
 
 # Private VSCode files
-.vscode
+.vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
