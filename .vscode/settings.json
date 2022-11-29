@@ -1,5 +1,4 @@
 {
-
 	"[css]": {
 		"editor.defaultFormatter": "stylelint.vscode-stylelint",
 		"editor.formatOnSave": false
@@ -20,21 +19,16 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": false
 	},
-    "[php]": {
+	"[php]": {
 		"editor.defaultFormatter": "obliviousharmony.vscode-php-codesniffer",
 		"editor.formatOnSave": false
-    },
-    "phpCodeSniffer.standard": "Default",
-    "phpCodeSniffer.autoExecutable": true,
+	},
+	"phpCodeSniffer.standard": "Default",
+	"phpCodeSniffer.autoExecutable": true,
 	"css.validate": false,
 	"scss.validate": false,
 	"less.validate": false,
-	"stylelint.validate": [
-        "css",
-        "less",
-        "postcss",
-        "scss"
-    ],
+	"stylelint.validate": [ "css", "less", "postcss", "scss" ],
 	"editor.codeActionsOnSave": {
 		"source.fixAll": false,
 		"source.fixAll.eslint": false
