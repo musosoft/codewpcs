@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Easy way to format and fix code with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist inspired by WordPress and their coding standards",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": ""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/musosoft/vscode-lint-beautify-wordpress-code.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/musosoft/vscode-lint-beautify-wordpress-code/issues"
   },

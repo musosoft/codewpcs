@@ -2,25 +2,29 @@
 Easy way to format and fix code with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist inspired by WordPress and their coding standards
 
 ## Prerequisities:
-### NPM and Composer
+### NodeJS, Composer, VSCode, Git
+You can install them manually or faster with package managers, e.g.:
 #### Windows Terminal (Admin)
-```choco install nodejs composer```
+```choco install nodejs composer vscode git```
 
 #### Mac Terminal
-```brew install node composer```
+```brew install node composer --cask visual-studio-code```
 
-### VSCode Extensions
-Prettier https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
-Eslint https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-Stylelint https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
-<!-- PHPCS https://marketplace.visualstudio.com/items?itemName=obliviousharmony.vscode-php-codesniffer -->
-<!-- EditorConfig https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig -->
+#### Ubuntu 
+```apt install nodejs npm composer vscode git```
 
-### Adding to project manually
-npm i -D eslint prettier@npm:wp-prettier browserslist @wordpress/stylelint-config @wordpress/browserslist-config @wordpress/eslint-plugin @wordpress/prettier-config @wordpress/scripts 
+### First run
+- [Download repository](https://github.com/musosoft/vscode-lint-beautify-wordpress-code/archive/main.zip) and extract into your project
+- Open your project's directory in VS Code and in it's terminal `` CTRL/CMD + ` `` run:
+```
+npm install
+composer install
+```
+- Change path for ``phpCodeSniffer.standardCustom`` and ``phpCodeSniffer.executable`` in .vscode/settings.json
+- Popup will show - press "Install" to get all required extensions
 
 ### TODO
-- PHPCS integration
+- Fix PHPCS VSCode integration
 - WP-Scripts integration
 - Markdown lint
 - Autoprefixer support
