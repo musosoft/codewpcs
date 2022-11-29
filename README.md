@@ -8,7 +8,7 @@ You can install them manually or faster with package managers, e.g.:
 ```choco install nodejs composer vscode git```
 
 #### Mac Terminal
-```brew install node composer --cask visual-studio-code```
+```brew install node composer git --cask visual-studio-code```
 
 #### Ubuntu 
 ```apt install nodejs npm composer code git```
@@ -20,11 +20,11 @@ You can install them manually or faster with package managers, e.g.:
 npm install
 composer install
 ```
-- Change path for ``phpCodeSniffer.standardCustom`` and ``phpCodeSniffer.executable`` in .vscode/settings.json
-- Popup will show - press "Install" to get all required extensions
+- Popup will show - press "Install" to get all required VS Code extensions
+- (Windows only) Set absolute paths for phpcs ``phpCodeSniffer.standardCustom`` and phpcs.xml.dist ``phpCodeSniffer.executable`` in .vscode/settings.json
 
 ### TODO
-- Fix PHPCS VSCode integration
+- Fix PHPCS VSCode integration on Windows - https://github.com/ObliviousHarmony/vscode-php-codesniffer/issues/55
 - WP-Scripts integration
 - Markdown lint
 - Autoprefixer support
