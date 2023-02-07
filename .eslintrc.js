@@ -3,7 +3,7 @@ module.exports = {
 	extends: [ 'plugin:@wordpress/eslint-plugin/recommended' ],
 	rules: {
 		'prettier/prettier': 'off',
-		'no-var': 'off',
+		// 'no-var': 'off',
 	},
 	env: {
 		browser: true,

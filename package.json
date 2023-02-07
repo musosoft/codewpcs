@@ -1,7 +1,11 @@
 {
   "name": "vscode-lint-beautify-wordpress-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy way to format and fix code with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist inspired by WordPress and their coding standards",
+  "bin": {
+    "codewpcs": "./bin/codewpcs/index.js"
+  },
+  "preferGlobal": true,
   "scripts": {
     "start": ""
   },
@@ -14,12 +18,13 @@
     "url": "https://github.com/musosoft/vscode-lint-beautify-wordpress-code/issues"
   },
   "homepage": "https://github.com/musosoft/vscode-lint-beautify-wordpress-code#readme",
-  "devDependencies": {
+  "dependencies": {
     "@wordpress/browserslist-config": "^5.5.0",
     "@wordpress/eslint-plugin": "^13.6.0",
     "@wordpress/prettier-config": "^2.5.0",
-    "@wordpress/scripts": "^24.6.0",
-    "@wordpress/stylelint-config": "^21.5.0",
+    "@wordpress/stylelint-config": "^21.5.0"
+  },
+  "devDependencies": {
     "browserslist": "^4.21.4",
     "eslint": "^8.28.0",
     "prettier": "npm:wp-prettier@^2.6.2"

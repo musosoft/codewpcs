@@ -14,17 +14,17 @@ You can install them manually or faster with package managers, e.g.:
 ```apt install nodejs npm composer code```
 
 ### First run
-- [Download repository](https://github.com/musosoft/vscode-lint-beautify-wordpress-code/archive/main.zip) and extract into your project
-- Open your project's directory in VS Code and in it's terminal `` CTRL/CMD + ` `` run:
+1.
 ```
-npm install
-composer install
+git clone git@github.com:musosoft/vscode-lint-beautify-wordpress-code.git
+npm install -g
+codewpcs <your project path>
 ```
-- Popup will show - press "Install" to get all required VS Code extensions
-- (Windows only) Set absolute paths for phpcs ``phpCodeSniffer.standardCustom`` and phpcs.xml.dist ``phpCodeSniffer.executable`` in .vscode/settings.json
+2. Popup will show - press "Install" to get all required VS Code extensions
+3. (Windows only) Set absolute paths for phpcs ``phpCodeSniffer.standardCustom`` and phpcs.xml.dist ``phpCodeSniffer.executable`` in .vscode/settings.json
 
 ### TODO
-- Global package setup
+- Global package setup - finish PHP part
 - Fix PHPCS VSCode integration on Windows - https://github.com/ObliviousHarmony/vscode-php-codesniffer/issues/55
 - WP-Scripts integration
 - Markdown lint
