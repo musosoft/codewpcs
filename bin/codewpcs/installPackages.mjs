@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import { execSync } from 'child_process';
+import { readFileSync } from 'fs';
 
 const installPackages = ( destination, srcPackageJson ) => {
 	try {
-		const packageJson = require( srcPackageJson );
+		const packageJson = JSON.parse( readFileSync( srcPackageJson ) );
 		const dependencies = Object.keys( packageJson.dependencies || {} );
 		const devDependencies = Object.keys(
 			packageJson.devDependencies || {}
