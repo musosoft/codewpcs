@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Easy way to format and fix code with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist inspired by WordPress and their coding standards",
   "bin": {
-    "codewpcs": "./bin/codewpcs/index.js"
+    "codewpcs": "./bin/codewpcs/index.mjs"
   },
   "preferGlobal": true,
   "scripts": {
