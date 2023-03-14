@@ -1,5 +1,5 @@
 # VSCode Lint & Beautify Wordpress Code
-Easy way to format and fix code with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist inspired by WordPress and their coding standards
+Easy way to format and fix CSS, JS, PHP code with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist inspired by WordPress and their WPCS coding standards
 
 ## Prerequisities:
 ### NodeJS, Composer, VSCode
@@ -14,14 +14,9 @@ You can install them manually or faster with package managers, e.g.:
 ```apt install nodejs npm composer code```
 
 ### First run
-1.
-```
-git clone git@github.com:musosoft/vscode-lint-beautify-wordpress-code.git
-npm install -g
-codewpcs <your project path>
-```
-2. Popup will show - press "Install" to get all required VS Code extensions
-3. (Windows only) Set absolute paths for phpcs ``phpCodeSniffer.standardCustom`` and phpcs.xml.dist ``phpCodeSniffer.executable`` in .vscode/settings.json
+1. ``npm install musosoft/vscode-lint-beautify-wordpress-code -g``
+2. ``codewpcs <your project path>``
+3. Popup will show - press "Install" to get all required VS Code extensions
 
 ### TODO
 - Global package setup - finish PHP part
