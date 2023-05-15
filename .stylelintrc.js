@@ -1,5 +1,5 @@
 module.exports = {
-	extends: [ 'stylelint-config-wordpress/scss' ],
+	extends: [ '@wordpress/stylelint-config/scss' ],
 	rules: {
 		// Your custom rules here, e.g.: 'no-descending-specificity': null
 	},
