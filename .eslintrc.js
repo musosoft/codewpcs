@@ -2,13 +2,12 @@ module.exports = {
 	root: true,
 	extends: [ 'plugin:@wordpress/eslint-plugin/recommended' ],
 	rules: {
-		'prettier/prettier': 'off',
-		// 'no-var': 'off',
+		// 'prettier/prettier': 'off',
 	},
-	env: {
-		browser: true,
-		commonjs: true,
-		es6: false,
-		jquery: true,
-	},
+	// env: {
+	// 	browser: true,
+	// 	commonjs: true,
+	// 	es6: true,
+	// 	jquery: true,
+	// },
 };
