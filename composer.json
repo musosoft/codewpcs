@@ -1,5 +1,5 @@
 {
-    "name": "musosoft/vscode-lint-beautify-wordpress-code",
+    "name": "musosoft/codewpcs",
     "description": "Easy way to format and fix code with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist inspired by WordPress and their coding standards",
     "type": "library",
     "license": "MIT",

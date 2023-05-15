@@ -24,8 +24,6 @@ This command line utility will automate the whole WPCS setup process for your VS
 NOTE: Popup will show after first VSCode run - press "Install" to get all required extensions
 
 ## TODO
-- Global package setup - finish PHP part
-- Fix PHPCS VSCode integration on Windows - https://github.com/ObliviousHarmony/vscode-php-codesniffer/issues/55
 - WP-Scripts integration
 - Markdown lint
 - Autoprefixer support

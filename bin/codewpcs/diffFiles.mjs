@@ -1,3 +1,4 @@
+// diffFiles.mjs
 /* eslint-disable no-console */
 import { lstatSync, readdirSync } from 'fs';
 import { join } from 'path';

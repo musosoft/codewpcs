@@ -23,7 +23,7 @@
 		"editor.defaultFormatter": "obliviousharmony.vscode-php-codesniffer",
 		"editor.formatOnSave": false
 	},
-	"phpCodeSniffer.standard": "Default",
+	"phpCodeSniffer.standard": "Automatic",
 	"phpCodeSniffer.autoExecutable": true,
 	"css.validate": false,
 	"scss.validate": false,

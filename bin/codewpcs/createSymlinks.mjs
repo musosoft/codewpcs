@@ -1,3 +1,4 @@
+// createSymlinks.mjs
 /* eslint-disable no-console */
 import { symlinkSync } from 'fs';
 
