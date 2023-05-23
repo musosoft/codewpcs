@@ -71,8 +71,10 @@ async function init() {
 		createSymlinks( srcNodeModules, targetNodeModules );
 		createSymlinks( srcPackageJson, targetPackageJson, true );
 	} else if (
-		! lstatSync( targetNodeModules ).isSymbolicLink() ||
-		! lstatSync( targetPackageJson ).isSymbolicLink()
+		( existsSync( targetNodeModules ) &&
+			! lstatSync( targetNodeModules ).isSymbolicLink() ) ||
+		( existsSync( targetPackageJson ) &&
+			! lstatSync( targetPackageJson ).isSymbolicLink() )
 	) {
 		installPackages( target, srcPackageJson, 'npm' );
 	}
@@ -85,8 +87,10 @@ async function init() {
 		createSymlinks( srcVendor, targetVendor );
 		createSymlinks( srcComposerJson, targetComposerJson, true );
 	} else if (
-		! lstatSync( targetVendor ).isSymbolicLink() ||
-		! lstatSync( targetComposerJson ).isSymbolicLink()
+		( existsSync( targetVendor ) &&
+			! lstatSync( targetVendor ).isSymbolicLink() ) ||
+		( existsSync( targetComposerJson ) &&
+			! lstatSync( targetComposerJson ).isSymbolicLink() )
 	) {
 		installPackages( target, srcComposerJson, 'composer' );
 	}

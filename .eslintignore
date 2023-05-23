@@ -1,6 +1,3 @@
-.cache
-build
-node_modules
-vendor
-# Allow dot config files (e.g. .eslintrc.js)
-!.*.js
+# By default, all `node_modules` are ignored.
+build/
+vendor/
