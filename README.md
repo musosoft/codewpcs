@@ -37,8 +37,9 @@ codewpcs <your project path>
 2. Open Command palette and Reload Window: ```workbench.action.reloadWindow```
 
 ## TODO
-- WP-Scripts integration
+- Scripts integration
 - Markdown lint
 - Autoprefixer support
 - PostCSS support
 - SVGOMG support
+- EditorConfig VSCode integration

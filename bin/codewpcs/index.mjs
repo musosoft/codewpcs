@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // index.mjs
 /* eslint-disable no-console */
-import { existsSync } from 'fs';
+import { existsSync, lstatSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { promisify } from 'util';
@@ -69,8 +69,11 @@ async function init() {
 		! existsSync( targetNodeModules )
 	) {
 		createSymlinks( srcNodeModules, targetNodeModules );
-		createSymlinks( srcPackageJson, targetPackageJson );
-	} else {
+		createSymlinks( srcPackageJson, targetPackageJson, true );
+	} else if (
+		! lstatSync( targetNodeModules ).isSymbolicLink() ||
+		! lstatSync( targetPackageJson ).isSymbolicLink()
+	) {
 		installPackages( target, srcPackageJson, 'npm' );
 	}
 
@@ -80,8 +83,11 @@ async function init() {
 
 	if ( ! existsSync( targetComposerJson ) || ! existsSync( targetVendor ) ) {
 		createSymlinks( srcVendor, targetVendor );
-		createSymlinks( srcComposerJson, targetComposerJson );
-	} else {
+		createSymlinks( srcComposerJson, targetComposerJson, true );
+	} else if (
+		! lstatSync( targetVendor ).isSymbolicLink() ||
+		! lstatSync( targetComposerJson ).isSymbolicLink()
+	) {
 		installPackages( target, srcComposerJson, 'composer' );
 	}
 }

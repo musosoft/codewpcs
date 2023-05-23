@@ -6,10 +6,27 @@ import { execSync } from 'child_process';
 
 const vscodeExecutable = ( () => {
 	try {
-		execSync( `which codium`, { stdio: 'ignore' } );
+		if ( process.platform === 'win32' ) {
+			execSync( `powershell Get-Command -Name codium`, {
+				stdio: 'ignore',
+			} );
+		} else {
+			execSync( `which codium`, { stdio: 'ignore' } );
+		}
 		return 'codium';
-	} catch ( error ) {
-		return 'code';
+	} catch {
+		try {
+			if ( process.platform === 'win32' ) {
+				execSync( `powershell Get-Command -Name code-insiders`, {
+					stdio: 'ignore',
+				} );
+			} else {
+				execSync( `which code-insiders`, { stdio: 'ignore' } );
+			}
+			return 'code-insiders';
+		} catch {
+			return 'code';
+		}
 	}
 } )();
 
