@@ -83,7 +83,7 @@ async function init() {
 		installPackages( null, srcComposerJson, 'composerGlobal' );
 	}
 
-	if ( ! existsSync( targetComposerJson ) || ! existsSync( targetVendor ) ) {
+	if ( ! existsSync( targetComposerJson ) && ! existsSync( targetVendor ) ) {
 		createSymlinks( srcVendor, targetVendor );
 		createSymlinks( srcComposerJson, targetComposerJson, true );
 	} else if (
