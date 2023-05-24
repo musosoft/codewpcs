@@ -1,4 +1,9 @@
-.cache
+# By default, all `node_modules` are ignored.
 build
 vendor
-node_modules
+
+# Skip files reformatted by package managers
+package-lock.json
+package.json
+composer.json
+composer.lock

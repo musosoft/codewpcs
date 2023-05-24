@@ -17,64 +17,56 @@ async function getSourceComposer() {
 	return stdout.trim();
 }
 
-let target = process.argv[ 2 ];
-const source = dirname( fileURLToPath( import.meta.url ) );
-let sourceComposer = '';
-
-try {
-	sourceComposer = await getSourceComposer();
-	console.log( 'Composer global path: ', sourceComposer );
-} catch ( err ) {
-	console.error( err );
-}
-
-const srcNodeModules = resolve( source, '../..', 'node_modules' );
-const targetNodeModules = resolve( target, 'node_modules' );
-const srcPackageJson = resolve( source, '../..', 'package.json' );
-const targetPackageJson = resolve( target, 'package.json' );
-const srcVendor = resolve( sourceComposer, 'vendor' );
-const targetVendor = resolve( target, 'vendor' );
-const srcComposerJson = resolve( source, '../..', 'composer.json' );
-const targetComposerJson = resolve( target, 'composer.json' );
-const srcPHPCS = resolve( srcVendor, 'bin', 'phpcs' );
-
-const filesToSync = [
-	'phpcs.xml.dist',
-	'.stylelintrc.js',
-	'.stylelintignore',
-	'.prettierrc.js',
-	'.prettierignore',
-	'.eslintrc.js',
-	'.eslintignore',
-	'.editorconfig',
-	'.browserslistrc',
-	'.vscode/extensions.json',
-	'.vscode/settings.json',
-];
-
 async function init() {
+	const target =
+		process.argv[ 2 ] === '.' ? process.cwd() : process.argv[ 2 ];
+
 	if ( ! target ) {
 		console.log( `No path specified!\nUsage: codewpcs <path>` );
 		return;
 	}
 
-	target = target === '.' ? process.cwd() : target;
+	const source = dirname( fileURLToPath( import.meta.url ) );
+	const sourceComposer = await getSourceComposer();
+	const srcNodeModules = resolve( source, '../..', 'node_modules' );
+	const targetNodeModules = resolve( target, 'node_modules' );
+	const srcPackageJson = resolve( source, '../..', 'package.json' );
+	const targetPackageJson = resolve( target, 'package.json' );
+	const srcVendor = resolve( sourceComposer, 'vendor' );
+	const targetVendor = resolve( target, 'vendor' );
+	const srcComposerJson = resolve( source, '../..', 'composer.json' );
+	const targetComposerJson = resolve( target, 'composer.json' );
+	const srcPHPCS = resolve( srcVendor, 'bin', 'phpcs' );
+
+	const filesToSync = [
+		'phpcs.xml.dist',
+		'.stylelintrc.js',
+		'.stylelintignore',
+		'.prettierrc.js',
+		'.prettierignore',
+		'.eslintrc.js',
+		'.eslintignore',
+		'.editorconfig',
+		'.browserslistrc',
+		'.vscode/extensions.json',
+		'.vscode/settings.json',
+	];
 
 	for ( const file of filesToSync ) {
 		await updateFiles( file, target );
 	}
 
-	if (
-		! existsSync( targetPackageJson ) &&
-		! existsSync( targetNodeModules )
-	) {
+	const shouldCreateSymLinks = ( path1, path2 ) =>
+		! existsSync( path1 ) && ! existsSync( path2 );
+	const shouldInstallPackages = ( path1, path2 ) =>
+		( existsSync( path1 ) && ! lstatSync( path1 ).isSymbolicLink() ) ||
+		( existsSync( path2 ) && ! lstatSync( path2 ).isSymbolicLink() );
+
+	if ( shouldCreateSymLinks( targetPackageJson, targetNodeModules ) ) {
 		createSymlinks( srcNodeModules, targetNodeModules );
 		createSymlinks( srcPackageJson, targetPackageJson, true );
 	} else if (
-		( existsSync( targetNodeModules ) &&
-			! lstatSync( targetNodeModules ).isSymbolicLink() ) ||
-		( existsSync( targetPackageJson ) &&
-			! lstatSync( targetPackageJson ).isSymbolicLink() )
+		shouldInstallPackages( targetNodeModules, targetPackageJson )
 	) {
 		installPackages( target, srcPackageJson, 'npm' );
 	}
@@ -83,15 +75,10 @@ async function init() {
 		installPackages( null, srcComposerJson, 'composerGlobal' );
 	}
 
-	if ( ! existsSync( targetComposerJson ) && ! existsSync( targetVendor ) ) {
+	if ( shouldCreateSymLinks( targetComposerJson, targetVendor ) ) {
 		createSymlinks( srcVendor, targetVendor );
 		createSymlinks( srcComposerJson, targetComposerJson, true );
-	} else if (
-		( existsSync( targetVendor ) &&
-			! lstatSync( targetVendor ).isSymbolicLink() ) ||
-		( existsSync( targetComposerJson ) &&
-			! lstatSync( targetComposerJson ).isSymbolicLink() )
-	) {
+	} else if ( shouldInstallPackages( targetVendor, targetComposerJson ) ) {
 		installPackages( target, srcComposerJson, 'composer' );
 	}
 }

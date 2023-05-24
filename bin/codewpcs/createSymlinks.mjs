@@ -32,7 +32,7 @@ const createSymlinks = async ( src, dest, isFile = false ) => {
 					}
 				} else {
 					console.error(
-						'Failed to create symlink. Directory does not exist.'
+						`Failed to create symlink. Directory ${ dest } does not exist.`
 					);
 				}
 				break;
