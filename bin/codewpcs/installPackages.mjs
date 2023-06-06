@@ -41,7 +41,7 @@ const installPackages = ( destination, srcPackageJson, mode = 'npm' ) => {
 			if ( requireDev.length ) {
 				try {
 					execSync(
-						`composer global require --dev ${ requireDev.join(
+						`composer global require --ignore-platform-reqs --dev ${ requireDev.join(
 							' '
 						) }`,
 						{ stdio: 'inherit' }
@@ -55,7 +55,7 @@ const installPackages = ( destination, srcPackageJson, mode = 'npm' ) => {
 					);
 				}
 				console.log(
-					`Executed command: composer global require --dev ${ requireDev.join(
+					`Executed command: composer global require --ignore-platform-reqs --dev ${ requireDev.join(
 						' '
 					) } in destination ${ destination }`
 				);
