@@ -8,6 +8,11 @@
 	-->
 	<ini name="memory_limit" value="256M" />
 
+	<!-- Prevent errors caused by WordPress Coding Standards not supporting PHP 8.0+.
+		 See https://github.com/WordPress/WordPress-Coding-Standards/issues/2035
+	-->
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+
 	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
 	<arg name="cache" />
 

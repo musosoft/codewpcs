@@ -72,7 +72,7 @@ async function init() {
 	}
 
 	if ( ! existsSync( srcPHPCS ) ) {
-		installPackages( null, srcComposerJson, 'composerGlobal' );
+		installPackages( sourceComposer, srcComposerJson, 'composerGlobal' );
 	}
 
 	if ( shouldCreateSymLinks( targetComposerJson, targetVendor ) ) {

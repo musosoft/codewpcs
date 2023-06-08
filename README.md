@@ -1,8 +1,8 @@
-# VSCode Lint & Beautify Wordpress Code
+# VSCode Lint & Beautify WordPress Code
 
-Easy way to format and fix CSS, JS, PHP code in VSCode with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist tools inspired by WordPress and their WPCS coding standards
+Easy way to format and fix CSS, JS, and PHP code in VSCode with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist tools inspired by WordPress and their WPCS coding standardsPrerequisites NodeJS, Composer, VSCode
 
-## Prerequisities NodeJS, Composer, VSCode
+## Prerequisites NodeJS, Composer 2+, VSCode
 
 You can install them manually or faster with package managers, e.g.:
 
@@ -22,12 +22,12 @@ brew install --cask visual-studio-code
 #### Ubuntu
 
 ```
-apt install nodejs npm composer code
+apt install nodejs composer code
 ```
 
 ## CodeWPCS CLI
 
-This command line utility will automate the whole WPCS setup process for your VSCode. It will update required files and packages in your project. If there are differences, side-by-side comparison will run. To save space required packages will be symlinked if possible.
+This command line utility will automate the whole WPCS setup process for your VSCode. It will update the required files and packages in your project. If there are differences, a side-by-side comparison will run. To save space required packages will be symlinked if possible.
 
 ### Install/Update:
 
@@ -35,7 +35,7 @@ This command line utility will automate the whole WPCS setup process for your VS
 npm i musosoft/codewpcs -g
 ```
 
-### Activate in project:
+### Activate in the project:
 
 ```
 codewpcs <your project path>
@@ -43,8 +43,8 @@ codewpcs <your project path>
 
 ### Setup VSCode Extensions:
 
-1. Popup will show after first VSCode run - press "Install" to get all required extensions
-2. Open Command palette and Reload Window: `workbench.action.reloadWindow`
+1. A popup will show after the first VSCode run - press "Install" to get all required extensions
+2. Open Command Palette and Reload Window: `workbench.action.reloadWindow`
 
 ## TODO
 
@@ -54,3 +54,4 @@ codewpcs <your project path>
 -   PostCSS support
 -   SVGOMG support
 -   EditorConfig VSCode integration
+-   Use PHPCS globally

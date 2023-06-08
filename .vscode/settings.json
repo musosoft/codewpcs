@@ -32,5 +32,12 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll": false,
 		"source.fixAll.eslint": false
+	},
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		"package.json": ".browserslist*, .editorconfig, .eslint*, .prettier*, .stylelint*, package-lock.json",
+		"composer.json": ".phpcs*, phpcs.xml*, composer.lock",
+		".wpcs": "package.json, .browserslist*, .editorconfig, .eslint*, .prettier*, .stylelint*, package-lock.json, composer.json, .phpcs*, phpcs.xml*, composer.lock"
 	}
 }
