@@ -39,17 +39,19 @@ async function init() {
 	const srcPHPCS = resolve( srcVendor, 'bin', 'phpcs' );
 
 	const filesToSync = [
-		'phpcs.xml.dist',
-		'.stylelintrc.js',
-		'.stylelintignore',
-		'.prettierrc.js',
-		'.prettierignore',
-		'.eslintrc.js',
-		'.eslintignore',
-		'.editorconfig',
 		'.browserslistrc',
+		'.editorconfig',
+		'.eslintignore',
+		'.eslintrc.js',
+		'.gitattributes',
+		'.gitignore',
+		'.prettierignore',
+		'.prettierrc.js',
+		'.stylelintignore',
+		'.stylelintrc.js',
 		'.vscode/extensions.json',
 		'.vscode/settings.json',
+		'phpcs.xml.dist',
 	];
 
 	for ( const file of filesToSync ) {

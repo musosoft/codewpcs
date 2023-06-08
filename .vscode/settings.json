@@ -38,6 +38,7 @@
 	"explorer.fileNesting.patterns": {
 		"package.json": ".browserslist*, .editorconfig, .eslint*, .prettier*, .stylelint*, package-lock.json",
 		"composer.json": ".phpcs*, phpcs.xml*, composer.lock",
+		".gitignore": ".gitattributes, .gitconfig",
 		".wpcs": "package.json, .browserslist*, .editorconfig, .eslint*, .prettier*, .stylelint*, package-lock.json, composer.json, .phpcs*, phpcs.xml*, composer.lock"
 	}
 }
