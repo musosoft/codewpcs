@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 // index.mjs
 /* eslint-disable no-console */
-import { existsSync, lstatSync } from 'fs';
+import { existsSync, lstatSync, createWriteStream } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { promisify } from 'util';
 import { exec } from 'child_process';
+import { get } from 'https';
 import updateFiles from './updateFiles.mjs';
 import installPackages from './installPackages.mjs';
 import createSymlinks from './createSymlinks.mjs';
@@ -15,6 +16,22 @@ async function getSourceComposer() {
 		'composer config --global home'
 	);
 	return stdout.trim();
+}
+
+async function downloadGitignore( targetDir ) {
+	const file = resolve( targetDir, '.gitignore' );
+	if ( existsSync( file ) ) {
+		return;
+	}
+	const url = 'https://raw.githubusercontent.com/musosoft/codewpcs/main/.gitignore';
+	return new Promise( ( resolvePromise, rejectPromise ) => {
+		get( url, function ( response ) {
+			response
+				.pipe( createWriteStream( file ) )
+				.on( 'finish', resolvePromise )
+				.on( 'error', rejectPromise );
+		} );
+	} );
 }
 
 async function init() {
@@ -53,6 +70,9 @@ async function init() {
 		'.vscode/settings.json',
 		'phpcs.xml.dist',
 	];
+
+	// .gitignore gets removed by npm install
+	await downloadGitignore( resolve( source, '../..' ) );
 
 	for ( const file of filesToSync ) {
 		await updateFiles( file, target );

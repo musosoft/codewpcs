@@ -72,11 +72,9 @@ const updateFiles = async ( src, dest ) => {
 					console.log(
 						`${ src } is already up to date in ${ dest }`
 					);
-					return;
 				}
 			}
 		} else {
-			console.log( `${ src } does not exist in ${ dest }. Copying...` );
 			// Create directory if not exist
 			if ( ! existsSync( dirname( destPath ) ) ) {
 				mkdirSync( dirname( destPath ), {

@@ -53,5 +53,4 @@ codewpcs <your project path>
 -   Autoprefixer support
 -   PostCSS support
 -   SVGOMG support
--   EditorConfig VSCode integration
 -   Use PHPCS globally
