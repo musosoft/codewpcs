@@ -23,7 +23,8 @@ async function downloadGitignore( targetDir ) {
 	if ( existsSync( file ) ) {
 		return;
 	}
-	const url = 'https://raw.githubusercontent.com/musosoft/codewpcs/main/.gitignore';
+	const url =
+		'https://raw.githubusercontent.com/musosoft/codewpcs/main/.gitignore';
 	return new Promise( ( resolvePromise, rejectPromise ) => {
 		get( url, function ( response ) {
 			response
