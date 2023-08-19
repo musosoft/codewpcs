@@ -1,6 +1,6 @@
 # VSCode Lint & Beautify WordPress Code
 
-Easy way to format and fix CSS, JS, and PHP code in VSCode with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist tools inspired by WordPress and their WPCS coding standardsPrerequisites NodeJS, Composer, VSCode
+Easy way to format and fix CSS, JS, and PHP code in VSCode with preconfigured Prettier, ESLint, Stylelint, PHPCS, EditorConfig and Browserlist tools inspired by WordPress and their WPCS coding standards.
 
 ## Prerequisites NodeJS, Composer 2+, VSCode
 
