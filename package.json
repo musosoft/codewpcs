@@ -30,14 +30,14 @@
 	},
 	"homepage": "https://github.com/musosoft/codewpcs#readme",
 	"dependencies": {
-		"@wordpress/browserslist-config": "^5.18.0",
-		"@wordpress/eslint-plugin": "^14.8.0",
-		"@wordpress/prettier-config": "^2.18.0",
-		"@wordpress/stylelint-config": "^21.18.0"
+		"@wordpress/browserslist-config": "^5.23.0",
+		"@wordpress/eslint-plugin": "^15.0.0",
+		"@wordpress/prettier-config": "^2.23.0",
+		"@wordpress/stylelint-config": "^21.23.0"
 	},
 	"devDependencies": {
-		"browserslist": "^4.21.7",
-		"eslint": "^8.42.0",
+		"browserslist": "^4.21.10",
+		"eslint": "^8.47.0",
 		"prettier": "npm:wp-prettier@^2.8.5"
 	}
 }
