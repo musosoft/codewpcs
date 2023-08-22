@@ -38,6 +38,6 @@
 	"devDependencies": {
 		"browserslist": "^4.21.10",
 		"eslint": "^8.47.0",
-		"prettier": "npm:wp-prettier@^2.8.5"
+		"prettier": "github:Automattic/wp-prettier#main"
 	}
 }
